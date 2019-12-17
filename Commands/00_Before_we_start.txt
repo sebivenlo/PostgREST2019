@@ -1,0 +1,9 @@
+Git Bash:
+https://gitforwindows.org/
+
+Cygwin:
+https://www.cygwin.com/
+
+Docker Image:
+docker run --name timetable -p 5433:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+

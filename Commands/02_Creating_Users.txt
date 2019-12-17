@@ -1,0 +1,12 @@
+
+#Step 1: Create the authenticator
+
+create role authenticator noinherit login password 'mysecretpassword';
+
+#Step 2: Create an anonymous user
+
+create role anon nologin;
+grant anon to authenticator;
+
+grant usage on schema fontys to anon;
+grant select on fontys.timetable to anon;

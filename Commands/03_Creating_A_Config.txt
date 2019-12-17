@@ -1,0 +1,5 @@
+#Step 1 Create an empty textfile in the unziped postgrest folder and name it timetable.conf. Then open it in the editor or any other text editing program
+
+db-uri = "postgres://authenticator:mysecretpassword@localhost:5433/postgres"
+db-schema = "fontys"
+db-anon-role = "anon"

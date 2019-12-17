@@ -1,0 +1,21 @@
+#1 Try to do a curl command in git bash or cygwin to make changes
+
+curl http://localhost:3000/timetable?period=eq.1 -X PATCH \
+     -H "Content-Type: application/json" \
+     -d '{"room": "W 1.90"}'
+
+#2 Adding a new User in your psql window
+
+create role teacher nologin;
+grant teacher to authenticator;
+
+grant usage on schema fontys to teacher;
+grant all on fontys.timetable to teacher;
+grant usage, select on sequence fontys.timetable_day_seq to teacher;
+
+#3 Lets try making a curl request again
+
+curl http://localhost:3000/timetable?period=eq.1 -X PATCH \
+     -H "Authorization: Bearer <yourToken>" \
+     -H "Content-Type: application/json" \
+     -d '{"room": "W 1.89"}'

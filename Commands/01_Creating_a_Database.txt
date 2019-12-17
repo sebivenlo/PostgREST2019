@@ -1,0 +1,21 @@
+#Step 1: Start psql to edit the Docker Database via a CMD window
+
+docker exec -it timetable psql -U postgres
+
+#Step 2: Create a Schema
+
+create schema fontys;
+
+#Step 3: Create a table and fill it with data
+
+create table fontys.timetable (
+  day text not null,
+  period integer not null,
+  lesson text not null,
+  teacher text not null,
+  room text not null,
+  PRIMARY KEY (day, period)
+);
+
+insert into fontys.timetable (day, period, lesson, teacher, room) values
+  ('MON', 1, 'ESD', 'HOM', 'W 1.89'), ('MON', 2, 'ESD', 'HOM', 'W 1.89'), ('MON', 3, 'SOFA', '-', 'W 1.01'), ('MON', 4, 'PRSK', 'HLZ', 'W 2.82'), ('MON', 5, 'PRSK', 'HLZ', 'W 2.82');
